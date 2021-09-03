@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Offline</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="flex items-center justify-between h-32 px-14 bg-white absolute w-full left-0 top-0">
+        <span
+           class="w-40">
+            <img alt="Offline" src="logo.svg" class="w-32">
+        </span>
+        <div>
+            <div class="flex items-end flex-col font-light w-40">
+                <div id="time"
+                     class="text-4xl">11:09</div>
+                <div id="date"
+                     class="text-lg opacity-60">Di., 6. Juli 2021</div>
+            </div>
+        </div>
+
+        <script>
+            function setTime() {
+                var time = (new Date).toLocaleString('de-CH', {
+                    hour: 'numeric',
+                    minute: 'numeric'
+                })
+                document.getElementById('time').textContent = String(time)
+                setTimeout(() => setTime(), 10000)
+            }
+            setTime()
+
+            var date = (new Date).toLocaleString('de-CH', {
+                weekday: 'short',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            })
+            document.getElementById('date').textContent = String(date)
+        </script>
+
+    </header>
+
+    <div class="fixed z-10 inset-0 overflow-y-auto"
+         aria-labelledby="modal-title"
+         role="dialog"
+         aria-modal="true"
+         id="offline">
+        <section class="app-content">
+            <div class="flex flex-col flex-1 image">
+                <div class="flex flex-1 relative">
+                    <img class="absolute left-0 top-0 h-full"
+                         src="wallpaper.jpg"
+                         alt="Offline">
+                    <div class="absolute top-0 right-0 h-full flex items-end justify-end">
+                        <div class="bg-white p-10 relative image-card image-card--small mb-12 mr-12">
+                            <div class="text-lg opacity-60 mb-1 uppercase font-semibold">codebar Solutions AG</div>
+                            <h3>Herzlich Willkommen</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

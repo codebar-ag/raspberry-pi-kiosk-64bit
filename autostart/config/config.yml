@@ -1,0 +1,17 @@
+
+screenurls:
+  base: ${SCREENURLS_BASE}
+  identification: /api/identification
+  browser_start_url: offlinefallback/index.html
+  browser_start_url_is_internal: 1      #* set to True/1 if config browser_start_url is rel. intern. path
+  fallback: offlinefallback/index.html  #* To prevent filesystem problems with /home/pi/Offline/index.html we add the fallbackpage into the python package and call it by its relativ path
+
+auth: #! WARNING ! SECRETS SHOULD BE NOT VISIBILE IN GIT AND USED WITH ENV VARS. 
+  user: ${AUTH_USER}
+  token: ${AUTH_TOKEN}
+
+homecall_period: 60 # Seconds beetween every homecall
+
+# export SCREENURLS_BASE=""
+# export AUTH_USER=""
+# export AUTH_TOKEN=""

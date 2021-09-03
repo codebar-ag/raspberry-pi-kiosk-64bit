@@ -1,0 +1,22 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ ubuntu-latest ]
+
+    steps:
+      - name: Hello World
+        run: curl -I http://www.example.org
