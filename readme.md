@@ -110,7 +110,7 @@ Make sure you have a ssh public key and have access to the repository
 ssh-keygen
 cat ~/.ssh/id_rsa.pub
 
-git clone https://github.com/StanBarrows/raspberry-adscreens/issues
+git clonehttps://github.com/codebar-ag/raspberry-pi-kiosk
 ```
 
 
